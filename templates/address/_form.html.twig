@@ -1,0 +1,72 @@
+{% block body %}
+<style>
+    .custom-input-style {
+        width: 100%;
+        height: 60px;
+        border: 2px solid #eaedff;
+        color: #6f7172;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+
+    .os-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+    .os-btn::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: #bc8246;
+        z-index: -1;
+        transition: height 0.3s ease;
+    }
+
+    .os-btn:hover::after {
+        height: 100%;
+    }
+
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+    ::selection {
+        background: #bc8246;
+        color: #ffffff;
+        text-shadow: none;
+    }
+
+</style>
+
+<main>
+	<!-- login Area Strat-->
+	<section class="login-area pt-100 pb-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<div class="basic-login">
+						<h3 class="text-center mb-60">Créer une adresse</h3>
+						{{ form_start(form) }}
+                            {{ form_row(form.full_name, { label: 'Prénom et NOM', attr: { class: 'custom-input-style' }, required: true }) }}
+                            {{ form_row(form.societe_name, { label: 'Entreprise', required: false, attr: { class: 'custom-input-style' } }) }}
+                            {{ form_row(form.address, { label: 'Adresse', attr: { class: 'custom-input-style' }, required: true }) }}
+                            {{ form_row(form.postal, { label: 'Code postal', attr: { class: 'custom-input-style' }, required: true }) }}
+                            {{ form_row(form.address_complement, { label: 'Complément d\'adresse', attr: { class: 'custom-input-style' }, required: true }) }}
+                            {{ form_row(form.ville, { label: 'Ville', attr: { class: 'custom-input-style' }, required: true }) }}
+                            {{ form_row(form.pays, { label: 'Pays', attr: { class: 'custom-input-style' }, required: true }) }}
+                            {{ form_row(form.phone, { label: 'Téléphone', attr: { class: 'custom-input-style' }, required: true }) }}
+                            <button class="btn os-btn">{{ button_label|default('Enregistrer') }}</button>                                   
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- login Area End-->
+</main>
+
+{% endblock %}

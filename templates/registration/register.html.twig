@@ -1,0 +1,74 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Inscription
+{% endblock %}
+
+{% block body %}
+
+        <main>
+            {% for flash_error in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+            {% endfor %}
+            
+            <!-- login Area Strat-->
+            <section class="login-area pt-100 pb-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="basic-login">
+                                <h3 class="text-center mb-60">S'inscrire</h3>
+    
+                                {{ form_start(registrationForm) }}
+                                    {{ form_row(registrationForm.prenom, { label: 'Prénom' }) }}
+                                    {{ form_row(registrationForm.nom, { label: 'Nom' }) }}
+                                    {{ form_row(registrationForm.email, { label: 'Adresse email' }) }}
+                                    {{ form_row(registrationForm.plainPassword, { label: 'Password' }) }}
+                                    <div class="custom-checkbox">
+                                        {{ form_widget(registrationForm.agreeTerms, { 'attr': {'class': 'custom-checkbox-input'}}) }}
+                                        {{ form_label(registrationForm.agreeTerms, 'Conditions d\'utilisations', {'label_attr': {'class': 'custom-checkbox-label'}}) }}
+                                    </div>
+
+                                    <button type="submit" class="os-btn w-100" name="register">S'inscrire</button>
+                                    {{ form_errors(registrationForm) }}
+                                    
+                                    <div class="or-divide"><span>or</span></div>
+                                    <a href="#" class="os-btn os-btn-black w-100">Se connecter</a>
+                                {{ form_end(registrationForm) }}
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- login Area End-->
+        </main>
+
+        <style>
+            /* Styles spécifiques pour la case à cocher */
+            .custom-checkbox input[type="checkbox"] {
+                width: auto; 
+                margin-right: 10px;
+                margin-top: 5px;
+            }
+
+            /* Styles spécifiques pour la case à cocher */
+            .custom-checkbox-input {
+                width: auto; 
+                margin-right: 5px;
+            }
+
+            .custom-checkbox-label {
+                white-space: nowrap;
+                margin-top: -5px; /* Ajustez selon votre besoin */
+            }
+
+            /* Empêcher le label de partir à la ligne et aligner le checkbox et le label sur la même ligne */
+            .custom-checkbox {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start; 
+            }
+        </style>
+{% endblock %}

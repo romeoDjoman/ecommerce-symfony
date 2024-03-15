@@ -1,19 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<html class="no-js" lang="zxx">
+	<head>
+		<title>
+			{% block title %}{% endblock %}
+		</title>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Favicon Outstock -->
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+
+		{% block stylesheets %}
+			<!-- CSS Outstock -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="assets/css/fontAwesome5Pro.css">
+			<link rel="stylesheet" href="{{ asset('css/fontAwesome5Pro.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/preloader.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/metisMenu.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/jquery.fancybox.min.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/fontAwesome5Pro.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/default.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+		{% endblock %}
+		{% block javascripts %}{% endblock %}
+	</head>
+	<body>
+		<!-- Barre de navigation -->
+		{% include 'layout/header.html.twig' %}
+
+		<!-- Main -->
+		{% block body %}{% endblock %}
+		
+		<!-- Footer -->
+		{% include 'layout/footer.html.twig' %}
+
+		<!-- JS Outstock -->
+		<script src="{{ asset('js/vendor/modernizr-3.5.0.min.js') }}"></script>
+		<script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
+		<script src="{{ asset('js/vendor/waypoints.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ asset('js/metisMenu.min.js') }}"></script>
+		<script src="{{ asset('js/slick.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
+		<script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+		<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+		<script src="{{ asset('js/jquery-ui-slider-range.js') }}"></script>
+		<script src="{{ asset('js/ajax-form.js') }}"></script>
+		<script src="{{ asset('js/wow.min.js') }}"></script>
+		<script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
+		<script src="{{ asset('js/main.js') }}"></script>		
+	</body>
 </html>

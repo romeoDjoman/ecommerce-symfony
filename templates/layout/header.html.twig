@@ -1,0 +1,66 @@
+
+<header>
+    <!-- Section d'en-tête avec arrière-plan gris -->
+    <div class="header__area grey-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Section du logo -->
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h3>InSciC</h3>
+                        </a>
+                    </div>
+                </div>
+                <!-- Section de navigation -->
+                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-8">
+                    <div class="header__right p-relative d-flex justify-content-between align-items-center">
+                        <!-- Menu principal pour les écrans larges -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>
+                                <ul>
+                                    <li class="active">
+                                        <a href="{{ path('app_home') }}">Accueil</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Boutique</a>
+                                    </li>
+                                
+                                    <li>
+                                        <a href="">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('app_register') }}">Inscription</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('app_login') }}">Connexion</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Bouton de menu mobile pour les petits écrans -->
+                        <div class="mobile-menu-btn d-lg-none">
+                            <a href="javascript:void(0);" class="mobile-menu-toggle">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                        </div>
+                        <!-- Actions de l'utilisateur en fonction de l'état d'authentification -->
+                        <div class="header__action">
+                            <ul>
+                               
+                                    <!-- L'utilisateur n'est pas connecté -->
+                                    <li>
+                                        <a href="{{ path('app_cart') }}" class="cart">
+                                            <i class="fa-solid fa-cart-shopping"></i> Panier
+                                            {% if cartItemCount is defined %}(<span style="color: red;">{{ cartItemCount }}</span>){% endif %}
+                                        </a>
+                                    </li>
+                                    
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

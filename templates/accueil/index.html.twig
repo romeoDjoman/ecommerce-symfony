@@ -1,0 +1,375 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Sciences et communications
+{% endblock %}
+
+{% block body %}
+	<main>
+		<!-- slider area start -->
+		<section class="slider__area p-relative">
+			<div class="slider-active">
+				<div class="single-slider slider__height d-flex align-items-center" data-background="assets/img/slider/slide-1.jpg">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-12">
+								<div class="slider__content">
+									<h2 data-animation="fadeInUp" data-delay=".2s">Des chercheurs
+										<br>
+										cultivent vos solutions</h2>
+									<p data-animation="fadeInUp" data-delay=".4s">Aussi précieuses et distinctes que les cellules végétales, cette technique transformera votre processus de culture en une expérience exceptionnelle.
+									</p>
+									<a href="shop.html" class="os-btn os-btn-2" data-animation="fadeInUp" data-delay=".6s">Décourvir maintenant</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="single-slider slider__height d-flex align-items-center" data-background="assets/img/slider/slide-2.jpg">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 col-12">
+								<div class="slider__content">
+									<h2 data-animation="fadeInUp" data-delay=".2s">Explorez l'inconnu &<br>
+										Innovez</h2>
+									<p data-animation="fadeInUp" data-delay=".4s">Plongez au cœur des mystères invisibles du monde microscopique</p>
+									<a href="shop.html" class="os-btn os-btn-2" data-animation="fadeInUp" data-delay=".6s">Décourvir maintenant</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="single-slider slider__height d-flex align-items-center" data-background="assets/img/slider/slide-3.jpg">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 col-12">
+								<div class="slider__content">
+									<h2 data-animation="fadeInUp" data-delay=".2s">La magie<br>
+										des molécules</h2>
+									<p data-animation="fadeInUp" data-delay=".4s">Votre Source pour l'Innovation Chimique.</p>
+									<a href="shop.html" class="os-btn os-btn-2" data-animation="fadeInUp" data-delay=".6s">Décourvir maintenant</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- slider area end -->
+
+		<!-- banner area start -->
+		<div class="banner__area">
+			<div class="container">
+				<div class="banner__inner p-relative mt--95">
+					<div class="row">
+						<div class="col-xl-4 col-lg-4 col-md-6">
+							<div class="banner__item mb-30 p-relative">
+								<div class="banner__thumb fix">
+									<a href="#" class="w-img"><img src="assets/img/showcase/adn.jpeg" alt="banner" style="width: 376px; height: 231px; object-fit: cover;"></a>
+								</div>
+
+								<div class="banner__content p-absolute transition-3">
+									<h5>
+										<a href="#">Structure Moléculaire
+											<br>
+											Quartz Hands</a>
+									</h5>
+									<a href="#" class="link-btn">Explorer le code</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-6">
+							<div class="banner__item mb-30 p-relative">
+								<div class="banner__thumb fix">
+									<a href="#" class="w-img"><img src="assets/img/showcase/math.jpg" alt="banner" style="width: 376px; height: 231px; object-fit: cover;"></a>
+								</div>
+								<div class="banner__content p-absolute transition-3" style="color: white;">
+									<h5>
+										<a href="#">Formules mathématiques
+											<br>
+											Project</a>
+									</h5>
+									<a href="#" class="link-btn">Strutures géométriques</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-6">
+							<div class="banner__item mb-30 p-relative">
+								<div class="banner__thumb fix" >
+									<a href="#" class="w-img"><img src="assets/img/showcase/cosmique.jpg" alt="banner" style="width: 376px; height: 231px; object-fit: cover;"></a>
+								</div>
+								<div class="banner__content p-absolute transition-3">
+									<h5>
+										<a href="#">Univers spatiale
+											<br>
+											by Clodasin
+										</a>
+									</h5>
+									<a href="#" class="link-btn">Entité spatiale</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- banner area end -->
+
+		<!-- product area start -->
+		<section class="product__area pt-60 pb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="section__title-wrapper text-center mb-55">
+							<div class="section__title mb-10">
+								<h2>Boutique</h2>
+							</div>
+							<div class="section__sub-title">
+								<p>Découvrez notre boutique en ligne, où la science prend vie à travers une sélection captivante de livres scientifiques. Explorez l'univers de la connaissance avec des ouvrages experts qui éveilleront votre curiosité et nourriront votre esprit.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="product__slider owl-carousel">
+							{% for produit in produits %}
+							<div class="product__item">
+								<div class="product__wrapper mb-60">
+									<div class="product__thumb">
+										<a href="#" class="w-img">
+											<img src="{{asset('assets/upload/products/') ~ produit.image }}" alt="{{ produit.slug }}">
+											<img class="product__thumb-2" src="{{asset('assets/upload/products/') ~ produit.image }}" alt="{{ produit.slug }}">
+										</a>
+										<div class="product__action transition-3">
+											<a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+												<i class="fal fa-heart"></i>
+											</a>
+											<a href="#" data-toggle="tooltip" data-placement="top" title="Compare">
+												<i class="fal fa-sliders-h"></i>
+											</a>
+											<!-- Button trigger modal -->
+											<a href="" data-toggle="modal" data-target="#productModalId">
+												<i class="fal fa-search"></i>
+											</a>
+										</div>
+										{% if produit.isBest == 1 %}
+											<div class="product__sale">
+												<span class="new">Top</span>
+		
+											</div>
+										{% elseif produit.isNew == 1 %}
+											<div class="product__sale">
+												<span class="new">Nouveau</span>
+											</div>
+										{% elseif produit.isFeatured == 1 %}
+											<div class="product__sale">
+												<span class="new">La une</span>
+											</div>
+										{% elseif produit.isSpecialOffer == 1 %}
+											<div class="product__sale">
+												<span class="new">Offre</span>
+												<span class="percent">-70%</span>
+											</div>
+										{% endif %}
+
+									</div>
+									<div class="product__content p-relative">
+										<div class="product__content-inner">
+											<h4>
+												<a href="#">{{ produit.nameProduct }} </a>
+											</h4>
+											<div class="product__price transition-3">
+												{% if produit.isSpecialOffer == 1 %}
+												<span>{{ produit.price / 100|number_format(2, '.', ',') }}€</span>
+												<span class="old-price">{{ (produit.price / 100 / (1 - 0.70))|number_format(2, '.', ',') }}€</span>
+												{% else %}
+												<span>{{ produit.price / 100|number_format(2, '.', ',') }}€</span>
+												<span class="old-price">{{ (produit.price / 100 / (1 - 0.30))|number_format(2, '.', ',') }}€</span>
+												{% endif %}
+											</div>
+
+										</div>
+										<div class="add-cart p-absolute transition-3">
+											<a href="{{path('cartAdd',{'id':produit.id})}}">+ Ajouter au panier</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="product__load-btn text-center mt-25">
+							<a href="#" class="os-btn os-btn-3">Découvrir plus</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- product area end -->
+	
+		<!-- shop modal start -->
+		<!-- Modal -->
+			{% for produit in produits %}			
+			<div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true"> <div class="modal-dialog modal-dialog-centered product-modal" role="document">
+				<div class="modal-content">
+					<div class="product__modal-wrapper p-relative">
+						<div class="product__modal-close p-absolute">
+							<button data-dismiss="modal">
+								<i class="fal fa-times"></i>
+							</button>
+						</div>
+						<div class="product__modal-inner">
+							<div class="row">
+								<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+									<div class="product__modal-box">
+										<div class="tab-content mb-20" id="nav-tabContent">
+											<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+												<div class="product__modal-img w-img">
+													<img src="assets/img/shop/product/quick-view/quick-big-1.jpg" alt="">
+												</div>
+											</div>
+											<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+												<div class="product__modal-img w-img">
+													<img src="assets/img/shop/product/quick-view/quick-big-2.jpg" alt="">
+												</div>
+											</div>
+											<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+												<div class="product__modal-img w-img">
+													<img src="assets/img/shop/product/quick-view/quick-big-3.jpg" alt="">
+												</div>
+											</div>
+										</div>
+										<nav>
+											<div class="nav nav-tabs justify-content-between" id="nav-tab" role="tablist">
+												<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+													<div class="product__nav-img w-img">
+														<img src="assets/img/shop/product/quick-view/quick-sm-1.jpg" alt="">
+													</div>
+												</a>
+												<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+													<div class="product__nav-img w-img">
+														<img src="assets/img/shop/product/quick-view/quick-sm-2.jpg" alt="">
+													</div>
+												</a>
+												<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+													<div class="product__nav-img w-img">
+														<img src="assets/img/shop/product/quick-view/quick-sm-3.jpg" alt="">
+													</div>
+												</a>
+											</div>
+										</nav>
+									</div>
+								</div>
+								<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+									<div class="product__modal-content">
+										<h4>
+											<a href="#"> {{ produit.nameProduct }} </a>
+										</h4>
+										<div class="rating rating-shop mb-15">
+											<ul>
+												<li>
+													<span>
+														<i class="fas fa-star"></i>
+													</span>
+												</li>
+												<li>
+													<span>
+														<i class="fas fa-star"></i>
+													</span>
+												</li>
+												<li>
+													<span>
+														<i class="fas fa-star"></i>
+													</span>
+												</li>
+												<li>
+													<span>
+														<i class="fas fa-star"></i>
+													</span>
+												</li>
+												<li>
+													<span>
+														<i class="fal fa-star"></i>
+													</span>
+												</li>
+											</ul>
+											<span class="rating-no ml-10">
+												3 rating(s)
+											</span>
+										</div>
+										<div class="product__price-2 mb-25">
+											<span>$96.00</span>
+											<span class="old-price">$96.00</span>
+										</div>
+										<div class="product__modal-des mb-30">
+											<p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.</p>
+										</div>
+										<div class="product__modal-form">
+											<form action="#">
+												<div class="product__modal-input size mb-20">
+													<label>Size
+														<i class="fas fa-star-of-life"></i>
+													</label>
+													<select>
+														<option>- Please select -</option>
+														<option>
+															S</option>
+														<option>
+															M</option>
+														<option>
+															L</option>
+														<option>
+															XL</option>
+														<option>
+															XXL</option>
+													</select>
+												</div>
+												<div class="product__modal-input color mb-20">
+													<label>Color
+														<i class="fas fa-star-of-life"></i>
+													</label>
+													<select>
+														<option>- Please select -</option>
+														<option>
+															Black</option>
+														<option>
+															Yellow</option>
+														<option>
+															Blue</option>
+														<option>
+															White</option>
+														<option>
+															Ocean Blue</option>
+													</select>
+												</div>
+												<div class="product__modal-required mb-5">
+													<span>Repuired Fiields *</span>
+												</div>
+												<div class="pro-quan-area d-lg-flex align-items-center">
+													<div class="product-quantity-title">
+														<label>Quantity</label>
+													</div>
+													<div class="product-quantity">
+														<div class="cart-plus-minus"><input type="text" value="1"/></div>
+													</div>
+													<div class="pro-cart-btn ml-20">
+														<a href="#" class="os-btn os-btn-black os-btn-3 mr-10">+ Add to Cart</a>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		<!-- shop modal end -->
+	</main>
+{% endblock %}

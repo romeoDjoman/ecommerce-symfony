@@ -1,0 +1,1 @@
+sass  --watch C:\Users\Admin\Dropbox\Iqbal\outstock\assets\scss\main.scss:C:\Users\Admin\Dropbox\Iqbal\outstock\assets\css\style.css

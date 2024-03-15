@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} 
+	Connexion
+{% endblock %}
+
+{% block body %}
+    <main>
+        <!-- login Area Strat-->
+        <section class="login-area pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="basic-login">
+                            <h3 class="text-center mb-60">Connexion</h3>
+                            <form method="post">
+                                {% if app.user %}
+                                    <div class="mb-3">
+                                        You are logged in as {{ app.user.nom }}, <a href="{{ path('app_logout') }}">Logout</a>
+                                    </div>
+                                {% endif %}
+
+                                <div class="message-flash">
+                                    {% if error %}
+                                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <label for="inputEmail">Adresse e-mail</label>
+                                <input type="text" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+                                
+                                <label for="pass">Mot de passe <span>**</span></label>
+                                <input type="password" name="password" id="inputPassword" class="form-control" required>
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                                
+                                <div class="login-action mb-20 fix">
+                                    {# <span class="log-rem f-left">
+                                        <input id="remember" type="checkbox" />
+                                        <label for="remember">Se souvenir de moi!</label>
+                                    </span> #}
+                                    <span class="forgot-login f-right">
+                                        <a href="{{ path('app_forgot_password_request')}}">Mot de passe oublié ?</a>
+                                    </span>
+                                </div>
+
+                                <p>URL générée : {{ path('app_forgot_password_request') }}</p>
+                            
+                                <button type="submit" class="os-btn w-100">Connexion</button>
+                                <div class="or-divide"><span>or</span></div>
+                                <a href="{{ path('app_register')}}" class="os-btn os-btn-black w-100">S'inscrire</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- login Area End-->
+    </main>
+{% endblock %}

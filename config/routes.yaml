@@ -1,3 +1,22 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+app_accueil:
+    path: /
+    controller: App\Controller\AccueilController::index
+
+app_login:
+    path: '/login'
+    controller: App\Controller\SecurityController::login
+
+app_forgot_password_request:
+    path: '/reset-password'
+    controller: App\Controller\ResetPasswordController::request
+
+
+# app_reset_password:
+#     path: '/reset-password'
+#     controller: App\Controller\ResetPasswordController::reset
+
+
+app_check_email:
+    path: '/check-email'
+    controller: 'App\Controller\ResetPasswordController::checkEmail'
+
