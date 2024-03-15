@@ -4,9 +4,8 @@
 ### Technologies 
 `Symfony` `PHP` `Bootstrap`
 
-![image](https://github.com/romeoDjoman/inscic/assets/128222614/24b54cba-a351-4ca1-9a8c-9bab4c1f3b86) 
-![image](https://github.com/romeoDjoman/inscic/assets/128222614/803097dd-a9f8-4da9-b651-91b2b59b591d)
-![image](https://github.com/romeoDjoman/inscic/assets/128222614/9e0696ea-f5f1-453c-bb9e-4114b51ad8c2)
+![image](https://github.com/romeoDjoman/inscic/assets/128222614/24b54cba-a351-4ca1-9a8c-9bab4c1f3b86)
+
 
 #### Fonctionalités 
 Utilisateur
