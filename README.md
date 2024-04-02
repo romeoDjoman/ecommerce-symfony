@@ -1,5 +1,5 @@
 # InScic
-<g>InScic</g> est un projet personnel que j'ai entrepris dans le cadre de mon apprentissage des fonctionnalités du framework Symfony. Il s'agit d'une plateforme e-commerce dédiée à la vente de livres scientifiques destinés à la fois aux savants et au grand public.
+<g>InScic</g> est un projet personnel que j'ai entrepris dans le cadre de mon apprentissage du framework Symfony. Il s'agit d'une plateforme e-commerce dédiée à la vente de livres scientifiques. L
 
 ### Technologies 
 `Symfony` `PHP` `Bootstrap`
@@ -9,7 +9,7 @@
 ![image](https://github.com/romeoDjoman/inscic/assets/128222614/68b1054d-e2c3-44df-9d60-cc21c0721062)
 
 
-#### Fonctionalités 
+#### Fonctionalités dévéloppées
 Utilisateur
 1. Inscription
 2. Connexion
